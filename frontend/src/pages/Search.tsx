@@ -6,8 +6,8 @@ import SearchResultsCard from "../components/SearchResultsCard";
 import Pagination from "../components/Pagination";
 import StarRatingFilter from "../components/StarRatingFilter";
 import HotelTypesFilter from "../components/HotelTypesFilter";
-import FacilitiesFilter from "../components/Facilitiesfilter";
 import PriceFilter from "../components/PriceFilter";
+import FacilitiesFilter from "../components/FacilitiesFilter";
 
 const Search = () => {
     const search = useSearchContext();
