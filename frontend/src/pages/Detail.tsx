@@ -5,7 +5,7 @@ import { AiFillStar } from "react-icons/ai";
 import GuestInfoForm from "../forms/GuestInfoForm/GuestInfoForm";
 
 const Detail = () => {
-    const { hotelId } = useParams();
+    const { hotelId } = useParams(); // this line of code is extracting the value of the hotelId parameter from the current URL path using React Router's useParams() hook and assigning it to the constant hotelId
 
     const { data: hotel } = useQuery(
         "fetchHotelById",

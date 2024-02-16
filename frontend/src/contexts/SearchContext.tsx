@@ -25,9 +25,13 @@ type SearchContextProviderProps = {
 export const SearchContextProvider = ({
     children,
 }: SearchContextProviderProps) => {
+    //Saving search values to session storage.
     const [destination, setDestination] = useState<string>(
         () => sessionStorage.getItem("destination") || ""
     );
+    /*
+The .toISOString() method is a built-in JavaScript function that belongs to the Date object. When called on a Date object, it returns a string representation of the date and time in a standardized format known as the ISO 8601 format.
+It typically looks like this: "YYYY-MM-DDTHH:mm:ss.sssZ", */
     const [checkIn, setCheckIn] = useState<Date>(
         () =>
             new Date(
