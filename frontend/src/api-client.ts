@@ -7,12 +7,11 @@ import {
     UserType,
 } from "../../backend/src/shared/types";
 import { BookingFormData } from "./forms/BookingForm/BookingForm";
-
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "";
 
 export const fetchCurrentUser = async (): Promise<UserType> => {
     const response = await fetch(`${API_BASE_URL}/api/users/me`, {
-        credentials: "include",// it tells the browser to send http cookie
+        credentials: "include",
     });
     if (!response.ok) {
         throw new Error("Error fetching user");
@@ -21,19 +20,19 @@ export const fetchCurrentUser = async (): Promise<UserType> => {
 };
 
 export const register = async (formData: RegisterFormData) => {
-    const res = await fetch(`${API_BASE_URL}/api/users/register`, {
+    const response = await fetch(`${API_BASE_URL}/api/users/register`, {
         method: "POST",
-        credentials: "include", //tells the browser to send http cookie that has auth stuff
+        credentials: "include",
         headers: {
             "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
     });
 
-    const resBody = await res.json();
+    const responseBody = await response.json();
 
-    if (!res.ok) {
-        throw new Error(resBody.message);
+    if (!response.ok) {
+        throw new Error(responseBody.message);
     }
 };
 
@@ -90,6 +89,7 @@ export const addMyHotel = async (hotelFormData: FormData) => {
 
     return response.json();
 };
+
 export const fetchMyHotels = async (): Promise<HotelType[]> => {
     const response = await fetch(`${API_BASE_URL}/api/my-hotels`, {
         credentials: "include",
@@ -108,7 +108,7 @@ export const fetchMyHotelById = async (hotelId: string): Promise<HotelType> => {
     });
 
     if (!response.ok) {
-        throw new Error("Error fetching hotels");
+        throw new Error("Error fetching Hotels");
     }
 
     return response.json();
