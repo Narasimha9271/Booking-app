@@ -25,7 +25,7 @@ app.use(express.json()); // automatically converts body of api requests to json
 app.use(express.urlencoded({ extended: true })); //parses the url to get params,etc..
 app.use(
     cors({
-        origin: process.env.FRONTEND_URL,
+        origin: 'https://viharavista.onrender.com',
         credentials: true,
     })
 );
