@@ -136,12 +136,15 @@ const BookingForm = ({ currentUser, paymentIntent }: Props) => {
 
             <div className="space-y-2">
                 <h3 className="text-xl font-semibold"> Payment Details</h3>
-                {/*CardElement displays inputs for card number, csv etc*/}
                 <CardElement
                     id="payment-element"
                     className="border rounded-md p-2 text-sm"
                 />
             </div>
+            <span>
+                <b>Test card:</b> 4000003560000008 <b>MM/YY:</b> 02/28{" "}
+                <b>CVV:</b> 578{" "}
+            </span>
 
             <div className="flex justify-end">
                 <button

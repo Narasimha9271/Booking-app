@@ -60,6 +60,7 @@ router.post(
                 await user.save();
 
                 //jwt
+                //sign method in JWT is used to generate a new token based on a payload (usually containing user data or other information) and a secret key
                 const token = jwt.sign(
                     { userId: user.id },
                     process.env.JWT_SECRET_KEY as string,
@@ -71,7 +72,7 @@ router.post(
                 res.cookie("auth_token", token, {
                     httpOnly: true,
                     secure: process.env.NODE_ENV === "production",
-                    maxAge: 86400000,
+                    maxAge: 86400000, //24 hours (24 * 60 * 60 * 1000 = 86400000 milliseconds)
                 });
                 return res.status(200).send({ message: "User registered OK" });
             } catch (error: unknown) {

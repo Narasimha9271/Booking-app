@@ -11,6 +11,7 @@ export type RegisterFormData = {
     password: string;
     confirmPassword: string;
 };
+
 export default function Register() {
     const queryClient = useQueryClient();
     const { showToast } = useAppContext();
@@ -26,7 +27,6 @@ export default function Register() {
         onSuccess: async () => {
             showToast({ message: "Registration Success!", type: "SUCCESS" });
             await queryClient.invalidateQueries("validateToken");
-            console.log("registration successful");
             navigate("/");
         },
         onError: (error: Error) => {

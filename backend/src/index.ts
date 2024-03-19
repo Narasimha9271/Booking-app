@@ -20,7 +20,7 @@ cloudinary.config({
 mongoose.connect(process.env.MONGODB_URI as string);
 
 const app = express();
-app.use(cookieParser());
+app.use(cookieParser());// a middleware , enabling the application to handle and parse cookies sent by clients in HTTP requests
 app.use(express.json()); // automatically converts body of api requests to json
 app.use(express.urlencoded({ extended: true })); //parses the url to get params,etc..
 app.use(

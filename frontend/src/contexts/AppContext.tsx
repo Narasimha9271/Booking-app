@@ -17,10 +17,12 @@ type AppContext = {
     stripePromise: Promise<Stripe | null>;
 };
 
+//React.createContext. It provides a way to pass data through the component tree without having to pass props down manually at every level.
 const AppContext = React.createContext<AppContext | undefined>(undefined);
 
 const stripePromise = loadStripe(STRIPE_PUB_KEY);
 
+//AppContextProvider: This is a component responsible for providing the context value to its descendants.
 export const AppContextProvider = ({
     children,
 }: {

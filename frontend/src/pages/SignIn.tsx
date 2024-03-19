@@ -75,6 +75,8 @@ export default function SignIn() {
                     </span>
                 )}
             </label>
+            <span>Test Email: test@gmail.com</span>
+            <span>Test Password:Test#123</span>
 
             <span className="flex items-center justify-between">
                 <span className="text-sm">
